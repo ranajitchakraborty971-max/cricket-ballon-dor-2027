@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cricket Ballon d'Or 2027</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #080808;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 22px 15px;
+  text-align: center;
+  border-bottom: 1px solid #b99440;
+}
+
+.logo {
+  color: #d8b45a;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+header p {
+  color: #aaa;
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.hero {
+  text-align: center;
+  padding: 65px 15px 45px;
+  background: linear-gradient(160deg,#211a0b,#080808 75%);
+}
+
+.trophy {
+  font-size: 65px;
+}
+
+.hero h1 {
+  color: #e4c16a;
+  font-size: 32px;
+  margin: 15px 0;
+}
+
+.hero p {
+  color: #bbb;
+  line-height: 1.7;
+}
+
+.section {
+  padding: 30px 15px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section h2 {
+  color: #e4c16a;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #999;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.search {
+  width: 100%;
+  padding: 14px;
+  background: #171717;
+  border: 1px solid #80652d;
+  border-radius: 8px;
+  color: white;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(145px,1fr));
+  gap: 13px;
+}
+
+.card {
+  background: linear-gradient(145deg,#202020,#101010);
+  border: 1px solid #50401e;
+  border-radius: 12px;
+  padding: 20px 10px;
+  text-align: center;
+  transition: .2s;
+}
+
+.card:hover {
+  border-color: #e4c16a;
+  transform: translateY(-3px);
+}
+
+.number {
+  color: #d8b45a;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.card button {
+  background: #d8b45a;
+  color: #111;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #fff0b0;
+}
+
+.notice {
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+footer {
+  border-top: 1px solid #59451e;
+  padding: 25px 10px;
+  text-align: center;
+  color: #888;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+.gold {
+  color: #e4c16a;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🏆 CRICKET BALLON D'OR</div>
+  <p>THE ULTIMATE CRICKET HONOUR · 2027</p>
+</header>
+
+<section class="hero">
+  <div class="trophy">🏆</div>
+  <h1>CRICKET BALLON D'OR 2027</h1>
+  <p>
+    Celebrating Excellence in Men's Cricket.<br>
+    One Award. Thirty Nominees. One Champion.
+  </p>
+</section>
+
+<section class="section">
+  <h2>THE NOMINEES</h2>
+  <p class="subtitle">
+    30 Provisional Candidates · Men's Edition 2027
+  </p>
+
+  <input
+    class="search"
+    type="text"
+    id="search"
+    placeholder="Search your favourite cricketer..."
+  >
+
+  <div class="grid" id="players"></div>
+
+  <p class="notice">
+    Final nominees will be confirmed after the 2027 season.
+  </p>
+</section>
+
+<footer>
+  <p class="gold">CRICKET BALLON D'OR 2027</p>
+  <p>Celebrating the Spirit of Cricket</p>
+  <p>© 2027 Cricket Ballon d'Or</p>
+</footer>
+
+<script>
+const nominees = [
+"Shubman Gill",
+"Jasprit Bumrah",
+"Abhishek Sharma",
+"Yashasvi Jaiswal",
+"Virat Kohli",
+"Hardik Pandya",
+"Travis Head",
+"Pat Cummins",
+"Mitchell Starc",
+"Steve Smith",
+"Harry Brook",
+"Joe Root",
+"Ben Stokes",
+"Jos Buttler",
+"Kane Williamson",
+"Rachin Ravindra",
+"Mitchell Santner",
+"Babar Azam",
+"Shaheen Shah Afridi",
+"Naseem Shah",
+"Aiden Markram",
+"Marco Jansen",
+"Kagiso Rabada",
+"Rashid Khan",
+"Ibrahim Zadran",
+"Wanindu Hasaranga",
+"Mehidy Hasan Miraz",
+"Shai Hope",
+"Sikandar Raza",
+"Harry Tector"
+];
+
+const players = document.getElementById("players");
+
+function showPlayers(list) {
+  players.innerHTML = "";
+
+  list.forEach((name) => {
+    const index = nominees.indexOf(name) + 1;
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const number = document.createElement("div");
+    number.className = "number";
+    number.textContent = "NOMINEE #" + index;
+
+    const title = document.createElement("h3");
+    title.textContent = name;
+
+    const button = document.createElement("button");
+    button.textContent = "Vote";
+
+    button.onclick = () => {
+      alert("Voting will be activated after database connection!");
+    };
+
+    card.append(number, title, button);
+    players.appendChild(card);
+  });
+}
+
+showPlayers(nominees);
+
+document.getElementById("search").addEventListener("input", function() {
+  const query = this.value.toLowerCase();
+
+  showPlayers(
+    nominees.filter(name => name.toLowerCase().includes(query))
+  );
+});
+</script>
+
+</body>
+  </html>
